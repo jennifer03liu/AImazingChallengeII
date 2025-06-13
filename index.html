@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI'mazing Smart Work Challenge Ⅱ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* 1. 基礎與字體設定 */
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            background-color: #111827; /* 深灰藍背景 */
+        }
+
+        /* 2. 自定義 Tailwind 主色調 */
+        .bg-tech-green { background-color: #74af21; }
+        .text-tech-green { color: #74af21; }
+        .border-tech-green { border-color: #74af21; }
+        .hover\:bg-tech-green-dark:hover { background-color: #5a8a1a; }
+
+        /* 3. 科技感發光與漸變效果 */
+        .text-glow-green {
+            text-shadow: 0 0 8px #74af21, 0 0 12px #74af2180, 0 0 20px #74af2160;
+        }
+        .light-beam {
+            height: 2px;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, #74af21, transparent);
+            opacity: 0.6;
+        }
+        .mesh-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(circle at 25% 25%, #74af2122 0%, transparent 40%),
+                              radial-gradient(circle at 75% 75%, #38bdf822 0%, transparent 40%);
+            z-index: 0;
+            filter: blur(20px);
+        }
+
+        /* 4. 毛玻璃/玻璃擬態效果卡片 */
+        .glass-card {
+            background: rgba(31, 41, 55, 0.5); /* bg-gray-800 with opacity */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: #74af2180;
+            box-shadow: 0 0 25px rgba(116, 175, 33, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        /* 5. SVG 主視覺微動態 */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating-animation {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="text-gray-200 p-4 md:p-8">
+    <div class="poster-container max-w-4xl mx-auto bg-gray-900 rounded-3xl shadow-2xl shadow-black/50 overflow-hidden border border-gray-700/50 relative">
+        <div class="mesh-bg"></div>
+
+        <!-- Header Section -->
+        <header class="p-8 md:p-12 relative z-10">
+            <div class="flex justify-between items-center">
+                <!-- 公司 LOGO: 請將 src 中的網址替換成您的 LOGO 圖片網址 -->
+                <img src="G:\我的雲端硬碟\專案\AimazingChallenge\TF_Logo_2000x308.png" alt="公司 LOGO" class="h-12 w-auto">
+                <div class="text-right">
+                    <h1 class="text-4xl md:text-6xl font-black text-gray-100 tracking-tight">AI'mazing</h1>
+                    <h2 class="text-4xl md:text-6xl font-black text-tech-green tracking-tight text-glow-green">Smart Work Challenge Ⅱ</h2>
+                </div>
+            </div>
+            <p class="text-center text-xl md:text-2xl font-semibold text-gray-300 mt-8 tracking-wider">
+                「你的AI點子，點亮公司未來！」
+            </p>
+            <div class="mt-8">
+                 <div class="light-beam"></div>
+            </div>
+        </header>
+
+        <!-- Main Content Section -->
+        <main class="p-8 md:p-12 relative z-10 space-y-12">
+            <!-- Key Info Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-tech-green mb-2">參加對象</h3>
+                    <p class="text-gray-100 text-3xl font-black">公司全員</p>
+                    <p class="text-sm text-gray-400 mt-1 tracking-wider">無論職級與部門，人人都可發光</p>
+                </div>
+                 <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-tech-green mb-2">活動時程</h3>
+                    <p class="text-gray-100 text-3xl font-black">2025/06/15 <span class="text-xl">起</span></p>
+                    <p class="text-sm text-gray-400 mt-1 tracking-wider">把握時間，即刻開始構想！</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl lg:col-span-2">
+                    <h3 class="text-xl font-bold text-tech-green mb-2">投稿主題</h3>
+                    <div class="flex flex-col md:flex-row gap-4 mt-4">
+                        <div class="flex-1 bg-gray-900 p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-gray-200">個人效率 Personal Efficiency</h4>
+                            <p class="text-sm text-gray-400 mt-1">分享你如何用AI簡化日常工作。</p>
+                        </div>
+                        <div class="flex-1 bg-gray-900 p-4 rounded-lg border border-gray-700">
+                            <h4 class="font-bold text-gray-200">公司升級 Company Upgrade</h4>
+                            <p class="text-sm text-gray-400 mt-1">提出能優化團隊或公司流程的AI方案。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Highlighted Blocks -->
+            <div class="space-y-8">
+                <div class="bg-gray-800/70 p-6 rounded-2xl border-l-4 border-tech-green">
+                    <h3 class="text-xl font-bold text-gray-100 mb-2">提案需包括</h3>
+                    <p class="text-gray-300">一份完整的提案，應包含<span class="font-bold text-tech-green">「現況分享」</span>與<span class="font-bold text-yellow-400">「升級想像」</span>兩大部分，清楚說明痛點與解決方案。</p>
+                </div>
+                <div class="text-center p-6 rounded-2xl bg-gradient-to-r from-tech-green/10 via-tech-green/20 to-tech-green/10">
+                    <p class="text-xl font-bold text-gray-100">💡 「現在已經開始用AI，歡迎寫下你真實作法！」</p>
+                </div>
+            </div>
+            
+            <!-- Rewards Section -->
+            <div class="glass-card p-8 rounded-2xl text-center">
+                 <h3 class="text-2xl font-bold text-tech-green mb-6">🏆 豪華獎勵 🏆</h3>
+                 <div class="flex flex-wrap justify-center items-start gap-8">
+                    <div class="flex flex-col items-center w-28">
+                        <div class="p-4 rounded-full bg-yellow-400/10 border-2 border-yellow-400/30">
+                           <svg class="w-10 h-10 text-yellow-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414-.336.75-.75.75h-1.5m1.5 0v.375c0 .621-.504 1.125-1.125 1.125h-17.25m0 0h17.25" /></svg>
+                        </div>
+                        <span class="text-md font-bold mt-3 text-gray-100">高額獎金</span>
+                    </div>
+                    <div class="flex flex-col items-center w-28">
+                        <div class="p-4 rounded-full bg-sky-400/10 border-2 border-sky-400/30">
+                            <svg class="w-10 h-10 text-sky-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-1.5h5.25m-5.25 0h5.25m0 0h5.25m-5.25 0h5.25M3 4.5h15a2.25 2.25 0 012.25 2.25v10.5a2.25 2.25 0 01-2.25 2.25H3a2.25 2.25 0 01-2.25-2.25V6.75A2.25 2.25 0 013 4.5z" /></svg>
+                        </div>
+                        <span class="text-md font-bold mt-3 text-gray-100">禮券大獎</span>
+                    </div>
+                    <div class="flex flex-col items-center w-28">
+                        <div class="p-4 rounded-full bg-purple-400/10 border-2 border-purple-400/30">
+                            <svg class="w-10 h-10 text-purple-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" /></svg>
+                        </div>
+                        <span class="text-md font-bold mt-3 text-gray-100">最佳創意獎</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submission Method -->
+            <div class="text-center bg-gray-900/50 p-8 rounded-2xl border border-gray-700">
+                <h3 class="text-xl font-bold text-tech-green mb-4">投稿及收件方式</h3>
+                <p class="text-gray-300 max-w-lg mx-auto">請將您的提案以 word 或 PDF 格式，寄至活動信箱。收件人： <span class="bg-gray-700 px-2 py-1 rounded-md font-mono text-sm">Kevin Lin</span></p>
+                <a href="mailto:kevinlin@trendforce.com?subject=AI'mazing Challenge - 姓名" class="mt-4 inline-block bg-tech-green text-gray-900 font-bold py-3 px-8 rounded-lg text-lg hover:bg-tech-green-dark transition-colors transform hover:scale-105">
+                   立即投稿
+                </a>
+                 <p class="text-xs text-gray-500 mt-2">主旨請註明「AI'mazing Challenge - 姓名」</p>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="p-8 text-center border-t border-gray-700/50 relative">
+             <div class="light-beam opacity-30 absolute top-0 left-0"></div>
+            <p class="font-semibold text-gray-400 text-md relative z-10">「AI應用現況也很重要！請把你實際使用經驗也一起分享。」</p>
+        </footer>
+    </div>
+</body>
+</html>
+
